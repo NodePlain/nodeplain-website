@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://nodeplain.com
+
+# Sitemaps
+Sitemap: https://nodeplain.com/sitemap.xml

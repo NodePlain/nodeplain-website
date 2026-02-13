@@ -1,26 +1,218 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Brand Colors */
+  --color-cream: #F6F3EB;
+  --color-ink: #2A2620;
+  --color-amber: #C07840;
+  --color-amber-dark: #A86430;
+  --color-amber-light: #D4955F;
+  --color-moss: #7AA05E;
+  --color-moss-dark: #5E8A4B;
+  --color-stone: #9A947F;
+  --color-stone-light: #AEA898;
+  --color-warm-body: #5A5448;
+  --color-glass: #FDFCF8;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Typography */
+  --font-headline: var(--font-headline);
+  /* Newsreader */
+  --font-headline-bold: var(--font-headline-bold);
+  /* Plus Jakarta Sans */
+  --font-body: var(--font-body);
+  /* Outfit */
+  --font-mono: var(--font-mono);
+  /* Space Mono */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Border Radius */
+  --radius-container: 14px;
+  --radius-card: 10px;
+  --radius-button: 9px;
+  --radius-chip: 8px;
+
+  /* Shadows */
+  --shadow-glass: 0 1px 3px rgba(42, 38, 32, 0.04), 0 6px 20px rgba(42, 38, 32, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  --shadow-glass-hover: 0 4px 12px rgba(42, 38, 32, 0.08), 0 12px 32px rgba(42, 38, 32, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  --shadow-cta: 0 2px 8px rgba(192, 120, 64, 0.2), 0 8px 24px rgba(192, 120, 64, 0.12);
+  --shadow-cta-hover: 0 4px 14px rgba(192, 120, 64, 0.28), 0 12px 32px rgba(192, 120, 64, 0.15);
+
+  /* Animations */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-slide-down: slide-down 0.2s ease-out;
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes pulse-glow {
+
+    0%,
+    100% {
+      opacity: 0.6;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
+/* Global Reset */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-ink);
+}
+
+/* Typography Utilities */
+.font-headline {
+  font-family: var(--font-headline);
+}
+
+.font-headline-bold {
+  font-family: var(--font-headline-bold);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Utility Classes */
+
+/* 1. Frosted Glass Panel */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-glass);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-panel:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glass-hover);
+}
+
+/* 2. Primary CTA Button (Amber Gradient) */
+.cta-primary {
+  background: linear-gradient(135deg, var(--color-amber), var(--color-amber-dark));
+  color: var(--color-cream);
+  border-radius: var(--radius-button);
+  font-weight: 600;
+  box-shadow: var(--shadow-cta);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-primary:hover {
+  box-shadow: var(--shadow-cta-hover);
+  transform: translateY(-1px);
+}
+
+.cta-primary:active {
+  transform: translateY(0);
+}
+
+/* 3. Text Gradients */
+.text-gradient-amber {
+  background: linear-gradient(135deg, var(--color-amber), var(--color-amber-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 4. Ambient Glow Orb (CSS only) */
+.glow-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-orb-amber {
+  background: radial-gradient(circle, var(--color-amber) 0%, transparent 70%);
+}
+
+.glow-orb-moss {
+  background: radial-gradient(circle, var(--color-moss) 0%, transparent 70%);
+}
+
+/* 5. Gradient Divider */
+.gradient-divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--color-ink) 35%, var(--color-amber) 65%, transparent 100%);
+  opacity: 0.15;
+}
+
+/* 6. Mega Menu Panel */
+@keyframes mega-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mega-menu-panel {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: var(--radius-container);
+  box-shadow: 0 10px 40px rgba(42, 38, 32, 0.12), 0 2px 8px rgba(42, 38, 32, 0.06);
+  animation: mega-slide-down 0.2s ease-out forwards;
+  z-index: 100;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
 }

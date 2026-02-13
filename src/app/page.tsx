@@ -1,65 +1,79 @@
-import Image from "next/image";
+import { HeroSection } from "@/components/home/hero";
+import { ProblemFraming } from "@/components/home/problem-framing";
+import { PipelineAnimation } from "@/components/home/pipeline-diagram";
+import { BenefitCards } from "@/components/home/benefit-cards";
+import { SocialProof } from "@/components/home/social-proof";
+import { HowItWorks } from "@/components/home/how-it-works";
+import { Guarantee } from "@/components/home/guarantee";
+import { WhoWeHelp } from "@/components/home/who-we-help";
+import { FAQSection } from "@/components/home/faq";
+import { BookingSection } from "@/components/home/booking-section";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      {/* 1. Hero */}
+      <HeroSection />
+
+      {/* 2. Problem Framing (Sound Familiar?) */}
+      <div className="relative">
+        <ProblemFraming />
+        {/* Section Divider - Ambient */}
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-stone/10 to-transparent" />
+      </div>
+
+      {/* 3. Solution (Pipeline) */}
+      <section className="py-24 px-6 relative overflow-hidden">
+        <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col gap-6 relative z-10">
+            <span className="font-mono text-[0.7rem] uppercase tracking-widest text-stone">The Solution</span>
+            <h2 className="font-headline text-4xl md:text-5xl text-ink">
+              A system that fills your clinic — not just your <span className="italic text-amber">inbox</span>.
+            </h2>
+            <div className="text-lg text-warm-body leading-relaxed space-y-4">
+              <p>The 50-Patient Pipeline isn't another ad campaign. It's a complete patient acquisition system — from the moment someone searches for help to the moment they're sitting in your chair.</p>
+              <ul className="space-y-2 text-sm text-stone-dark">
+                <li className="flex items-center gap-2">✓ AHPRA-compliant creative</li>
+                <li className="flex items-center gap-2">✓ Condition-specific Meta Ads</li>
+                <li className="flex items-center gap-2">✓ Speed-to-lead automation</li>
+                <li className="flex items-center gap-2">✓ Practice management integration</li>
+              </ul>
+            </div>
+            <div className="pt-4">
+              <Button asChild className="cta-primary text-cream px-6 py-4">
+                <Link href="#book">Book Your Free Pipeline Audit</Link>
+              </Button>
+            </div>
+          </div>
+
+          <div className="h-[600px] w-full relative">
+            <PipelineAnimation />
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      {/* 4. Benefit Cards (Why NodePlain) */}
+      <BenefitCards />
+
+      {/* 5. Social Proof */}
+      <SocialProof />
+
+      {/* 6. How It Works */}
+      <HowItWorks />
+
+      {/* 7. Guarantee */}
+      <Guarantee />
+
+      {/* 8. Who We Help */}
+      <WhoWeHelp />
+
+      {/* 9. FAQ */}
+      <FAQSection />
+
+      {/* 10. Booking */}
+      <BookingSection />
+    </>
   );
 }
