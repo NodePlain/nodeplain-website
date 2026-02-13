@@ -1,20 +1,33 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export function AnimatedBackground() {
+    // Disable animations on mobile for performance
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     return (
         <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-cream">
             <div className="absolute inset-0 backdrop-blur-[100px] z-50 mix-blend-overlay opacity-50" />
 
             {/* Primary Orb - Top Left */}
             <motion.div
-                animate={{
+                animate={isMobile ? {} : {
                     x: [0, 50, 0],
                     y: [0, 30, 0],
                     scale: [1, 1.1, 1],
                 }}
-                transition={{
+                transition={isMobile ? {} : {
                     duration: 20,
                     repeat: Infinity,
                     ease: "easeInOut",
@@ -24,12 +37,12 @@ export function AnimatedBackground() {
 
             {/* Secondary Orb - Bottom Right */}
             <motion.div
-                animate={{
+                animate={isMobile ? {} : {
                     x: [0, -30, 0],
                     y: [0, -50, 0],
                     scale: [1, 1.2, 1],
                 }}
-                transition={{
+                transition={isMobile ? {} : {
                     duration: 25,
                     repeat: Infinity,
                     ease: "easeInOut",
@@ -38,22 +51,24 @@ export function AnimatedBackground() {
                 className="absolute -bottom-[10%] -right-[10%] w-[50vw] h-[50vw] bg-moss/20 rounded-full blur-[80px] mix-blend-multiply"
             />
 
-            {/* Accent Orb - Middle */}
-            <motion.div
-                animate={{
-                    x: [0, 40, -40, 0],
-                    y: [0, -40, 40, 0],
-                    scale: [1, 1.3, 1],
-                    opacity: [0.3, 0.5, 0.3],
-                }}
-                transition={{
-                    duration: 30,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 5,
-                }}
-                className="absolute top-[40%] left-[30%] w-[40vw] h-[40vw] bg-amber-light/15 rounded-full blur-[100px] mix-blend-multiply"
-            />
+            {/* Accent Orb - Middle - Disabled on mobile for performance */}
+            {!isMobile && (
+                <motion.div
+                    animate={{
+                        x: [0, 40, -40, 0],
+                        y: [0, -40, 40, 0],
+                        scale: [1, 1.3, 1],
+                        opacity: [0.3, 0.5, 0.3],
+                    }}
+                    transition={{
+                        duration: 30,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 5,
+                    }}
+                    className="absolute top-[40%] left-[30%] w-[40vw] h-[40vw] bg-amber-light/15 rounded-full blur-[100px] mix-blend-multiply"
+                />
+            )}
         </div>
     );
 }

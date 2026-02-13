@@ -11,6 +11,8 @@ const newsreader = Newsreader({
   variable: "--font-headline",
   display: "swap",
   style: ["normal", "italic"],
+  preload: true,
+  adjustFontFallback: true,
 });
 
 // Bold Data/Stat Numbers: Punchy
@@ -18,7 +20,9 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-headline-bold",
   display: "swap",
-  weight: ["500", "600", "700", "800"],
+  weight: ["600", "700"], // Reduced from 4 to 2 weights
+  preload: true,
+  adjustFontFallback: true,
 });
 
 // Body & UI: Navigation, buttons, paragraphs
@@ -26,7 +30,9 @@ const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600"], // Reduced from 5 to 3 weights
+  preload: true,
+  adjustFontFallback: true,
 });
 
 // Tags & Labels: Technical precision
@@ -35,11 +41,25 @@ const spaceMono = Space_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
   display: "swap",
+  preload: false, // Don't preload less critical font
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {
   title: "NodePlain — The 50-Patient Pipeline for Allied Health",
   description: "Done-for-you patient acquisition, speed-to-lead automation, and recruitment. AHPRA-compliant marketing for Physio, Chiro, and Osteo clinics.",
+  metadataBase: new URL('https://nodeplain.com'),
+  openGraph: {
+    type: 'website',
+    locale: 'en_AU',
+    siteName: 'NodePlain',
+  },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({

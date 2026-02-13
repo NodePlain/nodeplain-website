@@ -1,15 +1,24 @@
+import dynamic from "next/dynamic";
 import { HeroSection } from "@/components/home/hero";
 import { ProblemFraming } from "@/components/home/problem-framing";
-import { PipelineAnimation } from "@/components/home/pipeline-diagram";
-import { BenefitCards } from "@/components/home/benefit-cards";
-import { SocialProof } from "@/components/home/social-proof";
-import { HowItWorks } from "@/components/home/how-it-works";
-import { Guarantee } from "@/components/home/guarantee";
-import { WhoWeHelp } from "@/components/home/who-we-help";
-import { FAQSection } from "@/components/home/faq";
-import { BookingSection } from "@/components/home/booking-section";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+
+// Lazy load below-the-fold components
+const PipelineAnimation = dynamic(() => import("@/components/home/pipeline-diagram").then(mod => ({ default: mod.PipelineAnimation })), {
+  loading: () => <div className="h-[600px] w-full bg-stone/5 animate-pulse rounded-lg" />,
+});
+
+const BenefitCards = dynamic(() => import("@/components/home/benefit-cards").then(mod => ({ default: mod.BenefitCards })), {
+  loading: () => <div className="h-96 bg-stone/5 animate-pulse rounded-lg" />,
+});
+
+const SocialProof = dynamic(() => import("@/components/home/social-proof").then(mod => ({ default: mod.SocialProof })));
+const HowItWorks = dynamic(() => import("@/components/home/how-it-works").then(mod => ({ default: mod.HowItWorks })));
+const Guarantee = dynamic(() => import("@/components/home/guarantee").then(mod => ({ default: mod.Guarantee })));
+const WhoWeHelp = dynamic(() => import("@/components/home/who-we-help").then(mod => ({ default: mod.WhoWeHelp })));
+const FAQSection = dynamic(() => import("@/components/home/faq").then(mod => ({ default: mod.FAQSection })));
+const BookingSection = dynamic(() => import("@/components/home/booking-section").then(mod => ({ default: mod.BookingSection })));
 
 export default function Home() {
   return (
