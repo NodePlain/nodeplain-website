@@ -1,10 +1,11 @@
 import dynamic from "next/dynamic";
 import { HeroSection } from "@/components/home/hero";
-import { ProblemFraming } from "@/components/home/problem-framing";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-// Lazy load below-the-fold components
+// Lazy load ALL below-the-fold components to reduce initial JS
+const ProblemFraming = dynamic(() => import("@/components/home/problem-framing").then(mod => ({ default: mod.ProblemFraming })));
+
 const PipelineAnimation = dynamic(() => import("@/components/home/pipeline-diagram").then(mod => ({ default: mod.PipelineAnimation })), {
   loading: () => <div className="h-[600px] w-full bg-stone/5 animate-pulse rounded-lg" />,
 });

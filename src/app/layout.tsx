@@ -69,6 +69,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Preconnect to Google Fonts for faster font loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* DNS prefetch for any external resources */}
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+      </head>
       <body
         className={`${newsreader.variable} ${plusJakartaSans.variable} ${outfit.variable} ${spaceMono.variable} antialiased bg-cream text-ink font-body selection:bg-amber/20`}
       >
