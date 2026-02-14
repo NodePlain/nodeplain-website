@@ -1,8 +1,6 @@
-"use client";
-
 import { BentoGrid, BentoCard } from "@/components/ui/bento-grid";
 import { GraphicLeadsGhost, GraphicAgencyCarousel, GraphicInvisibleSearch } from "@/components/ui/animated-graphics";
-import { motion } from "framer-motion";
+
 
 export function ProblemFraming() {
     return (

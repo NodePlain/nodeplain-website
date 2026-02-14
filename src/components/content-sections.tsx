@@ -4,7 +4,6 @@ import { GlassPanel } from "@/components/ui/glass-panel";
 import { Check, X, ArrowRight, Minus, Plus } from "lucide-react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -49,20 +48,13 @@ function AccordionItem({ title, children }: { title: string; children: React.Rea
                     {isOpen ? <Minus size={16} /> : <Plus size={16} />}
                 </div>
             </button>
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="overflow-hidden"
-                    >
-                        <div className="pb-4 text-warm-body text-sm leading-relaxed">
-                            {children}
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            <div className={`grid transition-[grid-template-rows] duration-200 ease-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                <div className="overflow-hidden">
+                    <div className="pb-4 text-warm-body text-sm leading-relaxed">
+                        {children}
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

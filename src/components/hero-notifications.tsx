@@ -1,6 +1,5 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Check, Calendar } from "lucide-react";
 
@@ -46,37 +45,31 @@ export function HeroNotifications() {
 
     return (
         <div className="relative w-full max-w-[320px] h-[100px] flex flex-col justify-end pointer-events-none select-none">
-            <AnimatePresence mode="popLayout">
-                <motion.div
-                    key={NOTIFICATIONS[index].id}
-                    initial={{ opacity: 0, y: 20, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -20, scale: 0.95, transition: { duration: 0.3 } }}
-                    transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="absolute bottom-0 w-full"
-                >
-                    <div className="glass-card p-4 flex items-start gap-4 shadow-lg border-white/20 bg-white/40 backdrop-blur-md">
-                        <div
-                            className={`w-10 h-10 rounded-full flex items-center justify-center shadow-sm shrink-0 ${NOTIFICATIONS[index].color}`}
-                        >
-                            {NOTIFICATIONS[index].icon}
-                        </div>
-                        <div className="flex flex-col gap-1 min-w-0">
-                            <div className="flex justify-between items-center w-full">
-                                <span className="text-[0.65rem] font-bold uppercase tracking-wider text-stone-dark opacity-70">
-                                    {NOTIFICATIONS[index].source}
-                                </span>
-                                <span className="text-[0.65rem] text-stone-mid">
-                                    {NOTIFICATIONS[index].time}
-                                </span>
-                            </div>
-                            <span className="text-xs font-semibold text-ink truncate leading-tight">
-                                {NOTIFICATIONS[index].message}
+            <div
+                key={NOTIFICATIONS[index].id}
+                className="absolute bottom-0 w-full animate-fade-in"
+            >
+                <div className="glass-card p-4 flex items-start gap-4 shadow-lg border-white/20 bg-white/40 backdrop-blur-md">
+                    <div
+                        className={`w-10 h-10 rounded-full flex items-center justify-center shadow-sm shrink-0 ${NOTIFICATIONS[index].color}`}
+                    >
+                        {NOTIFICATIONS[index].icon}
+                    </div>
+                    <div className="flex flex-col gap-1 min-w-0">
+                        <div className="flex justify-between items-center w-full">
+                            <span className="text-[0.65rem] font-bold uppercase tracking-wider text-stone-dark opacity-70">
+                                {NOTIFICATIONS[index].source}
+                            </span>
+                            <span className="text-[0.65rem] text-stone-mid">
+                                {NOTIFICATIONS[index].time}
                             </span>
                         </div>
+                        <span className="text-xs font-semibold text-ink truncate leading-tight">
+                            {NOTIFICATIONS[index].message}
+                        </span>
                     </div>
-                </motion.div>
-            </AnimatePresence>
+                </div>
+            </div>
         </div>
     );
 }

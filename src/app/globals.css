@@ -16,13 +16,13 @@
 
   /* Typography */
   --font-headline: var(--font-headline);
-  /* Newsreader */
-  --font-headline-bold: var(--font-headline-bold);
-  /* Plus Jakarta Sans */
+  /* Newsreader (self-hosted) */
+  --font-headline-bold: var(--font-body);
+  /* Uses Outfit at bold weights (replaces Plus Jakarta Sans) */
   --font-body: var(--font-body);
-  /* Outfit */
-  --font-mono: var(--font-mono);
-  /* Space Mono */
+  /* Outfit (self-hosted) */
+  --font-mono: ui-monospace, 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+  /* System monospace (replaces Space Mono — zero download cost) */
 
   /* Border Radius */
   --radius-container: 14px;
@@ -107,6 +107,73 @@
       transform: translateY(0);
     }
   }
+
+  @keyframes fade-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes pipeline-flow {
+    0% { top: -20%; }
+    100% { top: 120%; }
+  }
+
+  @keyframes ping-slow {
+    0% { transform: scale(1); opacity: 0.2; }
+    50% { transform: scale(1.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 0.2; }
+  }
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes ghost-message {
+    0%, 10% { opacity: 0; transform: scale(0.8) translateY(10px); }
+    15%, 80% { opacity: 1; transform: scale(1) translateY(0); }
+    90%, 100% { opacity: 0; transform: scale(1) translateY(0); }
+  }
+
+  @keyframes ghost-typing {
+    0%, 20% { opacity: 0; }
+    30%, 50% { opacity: 1; }
+    70%, 100% { opacity: 0; }
+  }
+
+  @keyframes ghost-appear {
+    0%, 60%, 70% { opacity: 0; transform: scale(0.5); }
+    85% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0; transform: scale(1.5); }
+  }
+
+  @keyframes search-scroll {
+    0%, 20% { transform: translateY(0); }
+    80%, 100% { transform: translateY(-100px); }
+  }
+
+  @keyframes draw-line {
+    from { stroke-dashoffset: 200; }
+    to { stroke-dashoffset: 0; }
+  }
+
+  @keyframes scale-in {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+  }
+
+  @keyframes bounce-in {
+    0%, 70% { transform: scale(0); }
+    80% { transform: scale(1.1); }
+    90% { transform: scale(1); }
+    100% { transform: scale(1); }
+  }
 }
 
 /* Global Reset */
@@ -133,7 +200,8 @@ h6 {
 }
 
 .font-headline-bold {
-  font-family: var(--font-headline-bold);
+  font-family: var(--font-body);
+  font-weight: 700;
 }
 
 .font-body {
@@ -272,6 +340,52 @@ h6 {
   opacity: 0;
 }
 
+.animate-fade-in-left {
+  animation: fade-in-left 0.5s ease-out both;
+}
+
+.animate-pipeline-flow {
+  animation: pipeline-flow 3s linear infinite;
+}
+
+.animate-ping-slow {
+  animation: ping-slow 2s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
+}
+
+.animate-ghost-message {
+  animation: ghost-message 4s ease-in-out infinite;
+}
+
+.animate-ghost-typing {
+  animation: ghost-typing 4s ease-in-out infinite;
+}
+
+.animate-ghost-appear {
+  animation: ghost-appear 4s ease-in-out infinite;
+}
+
+.animate-search-scroll {
+  animation: search-scroll 5s ease-in-out infinite;
+}
+
+.animate-draw-line {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: draw-line 2s ease-in-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.4s ease-out 1s both;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 2.5s ease-out infinite;
+}
+
 /* Respect reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   .animate-float-slow,
@@ -279,7 +393,18 @@ h6 {
   .animate-fade-in,
   .animate-fade-in-delay-1,
   .animate-fade-in-delay-2,
-  .animate-fade-in-delay-3 {
+  .animate-fade-in-delay-3,
+  .animate-fade-in-left,
+  .animate-pipeline-flow,
+  .animate-ping-slow,
+  .animate-spin-slow,
+  .animate-ghost-message,
+  .animate-ghost-typing,
+  .animate-ghost-appear,
+  .animate-search-scroll,
+  .animate-draw-line,
+  .animate-scale-in,
+  .animate-bounce-in {
     animation: none !important;
     opacity: 1 !important;
   }
@@ -288,4 +413,19 @@ h6 {
 /* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Disable expensive backdrop-blur on mobile for GPU performance */
+@media (max-width: 768px) {
+  .glass-panel {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.85);
+  }
+
+  .mega-menu-panel {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.95);
+  }
 }

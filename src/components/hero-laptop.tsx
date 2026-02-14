@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+
 import { HeroNotifications } from "@/components/hero-notifications";
 
 export function HeroLaptop() {

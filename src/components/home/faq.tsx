@@ -3,7 +3,6 @@
 import { GlassPanel } from "@/components/ui/glass-panel";
 import { Plus, Minus } from "lucide-react";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 function AccordionItem({ title, children }: { title: string; children: React.ReactNode }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -21,20 +20,13 @@ function AccordionItem({ title, children }: { title: string; children: React.Rea
                     {isOpen ? <Minus size={18} /> : <Plus size={18} />}
                 </div>
             </button>
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="overflow-hidden"
-                    >
-                        <div className="pb-6 text-warm-body text-sm leading-relaxed pr-8">
-                            {children}
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            <div className={`grid transition-[grid-template-rows] duration-200 ease-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                <div className="overflow-hidden">
+                    <div className="pb-6 text-warm-body text-sm leading-relaxed pr-8">
+                        {children}
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

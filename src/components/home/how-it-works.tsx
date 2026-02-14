@@ -1,6 +1,5 @@
-"use client";
 
-import { motion } from "framer-motion";
+
 import { Search, Settings, CalendarCheck } from "lucide-react";
 
 export function HowItWorks() {

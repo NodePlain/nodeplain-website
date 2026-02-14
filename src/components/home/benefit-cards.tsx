@@ -3,7 +3,6 @@
 import { BentoGrid, BentoCard } from "@/components/ui/bento-grid";
 import { GraphicCostChart, GraphicSpeedToLead, GraphicIntegration } from "@/components/ui/animated-graphics";
 import { ShieldCheck, FileCheck, BarChart3 } from "lucide-react";
-import { motion } from "framer-motion";
 
 export function BenefitCards() {
     return (
@@ -59,9 +58,9 @@ export function BenefitCards() {
                     {/* 4. Guarantee */}
                     <BentoCard className="col-span-1 p-0">
                         <div className="w-full h-64 flex items-center justify-center relative rounded-t-xl bg-gradient-to-br from-moss/10 to-white overflow-hidden flex-shrink-0">
-                            <motion.div animate={{ scale: [1, 1.05, 1] }} transition={{ duration: 3, repeat: Infinity }}>
+                            <div className="animate-pulse-glow">
                                 <ShieldCheck size={64} className="text-moss" />
-                            </motion.div>
+                            </div>
                         </div>
                         <div className="flex flex-col gap-2 p-6">
                             <h3 className="font-headline-bold text-lg text-ink">90-Day Guarantee</h3>

@@ -14,8 +14,32 @@ const nextConfig: NextConfig = {
   // Optimize React in production
   reactStrictMode: true,
 
-  // Use Turbopack (default in Next.js 16)
-  // Bundle analyzer will need a Turbopack-compatible solution
+  // Caching headers for optimal performance
+  async headers() {
+    return [
+      {
+        // Self-hosted font files — cache immutably for 1 year
+        source: '/fonts/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+      {
+        // Next.js static assets (hashed filenames) — immutable cache
+        source: '/_next/static/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+      {
+        // HTML pages — cache on CDN with background revalidation
+        source: '/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, s-maxage=3600, stale-while-revalidate=86400' },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

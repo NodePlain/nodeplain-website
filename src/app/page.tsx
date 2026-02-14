@@ -1,25 +1,28 @@
-import dynamic from "next/dynamic";
+import nextDynamic from "next/dynamic";
 import { HeroSection } from "@/components/home/hero";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-// Lazy load ALL below-the-fold components to reduce initial JS
-const ProblemFraming = dynamic(() => import("@/components/home/problem-framing").then(mod => ({ default: mod.ProblemFraming })));
+// Pre-render at build time — homepage is entirely static content
+export const dynamic = 'force-static';
 
-const PipelineAnimation = dynamic(() => import("@/components/home/pipeline-diagram").then(mod => ({ default: mod.PipelineAnimation })), {
+// Lazy load ALL below-the-fold components to reduce initial JS
+const ProblemFraming = nextDynamic(() => import("@/components/home/problem-framing").then(mod => ({ default: mod.ProblemFraming })));
+
+const PipelineAnimation = nextDynamic(() => import("@/components/home/pipeline-diagram").then(mod => ({ default: mod.PipelineAnimation })), {
   loading: () => <div className="h-[600px] w-full bg-stone/5 animate-pulse rounded-lg" />,
 });
 
-const BenefitCards = dynamic(() => import("@/components/home/benefit-cards").then(mod => ({ default: mod.BenefitCards })), {
+const BenefitCards = nextDynamic(() => import("@/components/home/benefit-cards").then(mod => ({ default: mod.BenefitCards })), {
   loading: () => <div className="h-96 bg-stone/5 animate-pulse rounded-lg" />,
 });
 
-const SocialProof = dynamic(() => import("@/components/home/social-proof").then(mod => ({ default: mod.SocialProof })));
-const HowItWorks = dynamic(() => import("@/components/home/how-it-works").then(mod => ({ default: mod.HowItWorks })));
-const Guarantee = dynamic(() => import("@/components/home/guarantee").then(mod => ({ default: mod.Guarantee })));
-const WhoWeHelp = dynamic(() => import("@/components/home/who-we-help").then(mod => ({ default: mod.WhoWeHelp })));
-const FAQSection = dynamic(() => import("@/components/home/faq").then(mod => ({ default: mod.FAQSection })));
-const BookingSection = dynamic(() => import("@/components/home/booking-section").then(mod => ({ default: mod.BookingSection })));
+const SocialProof = nextDynamic(() => import("@/components/home/social-proof").then(mod => ({ default: mod.SocialProof })));
+const HowItWorks = nextDynamic(() => import("@/components/home/how-it-works").then(mod => ({ default: mod.HowItWorks })));
+const Guarantee = nextDynamic(() => import("@/components/home/guarantee").then(mod => ({ default: mod.Guarantee })));
+const WhoWeHelp = nextDynamic(() => import("@/components/home/who-we-help").then(mod => ({ default: mod.WhoWeHelp })));
+const FAQSection = nextDynamic(() => import("@/components/home/faq").then(mod => ({ default: mod.FAQSection })));
+const BookingSection = nextDynamic(() => import("@/components/home/booking-section").then(mod => ({ default: mod.BookingSection })));
 
 export default function Home() {
   return (

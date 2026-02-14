@@ -1,4 +1,3 @@
-"use client";
 
 import { GlassCard } from "@/components/ui/glass-card";
 import { Star } from "lucide-react";
