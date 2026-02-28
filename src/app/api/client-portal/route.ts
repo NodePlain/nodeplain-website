@@ -4,7 +4,7 @@ import { join } from "path";
 
 // The access key — set via Vercel env var, or falls back to a default.
 // To change: go to Vercel Dashboard → Settings → Environment Variables → add CLIENT_PORTAL_KEY
-const VALID_KEY = process.env.CLIENT_PORTAL_KEY || "SC-2026-BRAND";
+const VALID_KEY = process.env.CLIENT_PORTAL_KEY || "SC-2026-BRANDBOOK";
 
 export async function POST(req: NextRequest) {
   try {

@@ -86,7 +86,7 @@ export default function ClientPortalPage() {
                   setKey(e.target.value);
                   if (status === "error") setStatus("idle");
                 }}
-                placeholder="e.g. SC-2026-BRAND"
+                placeholder="e.g. PCL-2024-AUTOMATION"
                 autoFocus
                 autoComplete="off"
                 className="w-full px-4 py-3 rounded-[9px] border border-stone/20 bg-cream/50 text-ink text-sm placeholder:text-stone/50 focus:outline-none focus:ring-2 focus:ring-amber/40 focus:border-amber/50 transition-all"
