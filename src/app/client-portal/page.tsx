@@ -5,7 +5,7 @@ import { useState, useRef } from "react";
 export default function ClientPortalPage() {
   const [key, setKey] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "error" | "success">("idle");
-  const [htmlContent, setHtmlContent] = useState<string | null>(null);
+  const [validatedKey, setValidatedKey] = useState<string | null>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   async function handleSubmit(e: React.FormEvent) {
@@ -22,8 +22,7 @@ export default function ClientPortalPage() {
       });
 
       if (res.ok) {
-        const data = await res.json();
-        setHtmlContent(data.html);
+        setValidatedKey(key.trim());
         setStatus("success");
       } else {
         setStatus("error");
@@ -33,16 +32,15 @@ export default function ClientPortalPage() {
     }
   }
 
-  // Once authenticated, render the HTML in a sandboxed iframe (full-screen overlay)
-  if (status === "success" && htmlContent) {
+  // Once authenticated, load the HTML via src (not srcDoc) so iOS Safari respects viewport meta
+  if (status === "success" && validatedKey) {
     return (
       <div className="fixed inset-0 z-[9999] bg-cream">
         <iframe
           ref={iframeRef}
-          srcDoc={htmlContent}
+          src={`/api/client-portal?key=${encodeURIComponent(validatedKey)}`}
           title="Client Deliverable"
           className="w-full h-full border-0"
-          sandbox="allow-same-origin allow-scripts allow-popups"
         />
       </div>
     );

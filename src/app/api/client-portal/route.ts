@@ -6,6 +6,7 @@ import { join } from "path";
 // To change: go to Vercel Dashboard → Settings → Environment Variables → add CLIENT_PORTAL_KEY
 const VALID_KEY = process.env.CLIENT_PORTAL_KEY || "SC-2026-BRANDBOOK";
 
+/** POST — validate key (returns JSON) */
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -15,12 +16,32 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid key" }, { status: 401 });
     }
 
-    // Read the HTML file from the data directory
+    return NextResponse.json({ ok: true });
+  } catch {
+    return NextResponse.json({ error: "Server error" }, { status: 500 });
+  }
+}
+
+/** GET — serve the raw HTML (so iOS Safari respects viewport meta inside the iframe) */
+export async function GET(req: NextRequest) {
+  try {
+    const key = req.nextUrl.searchParams.get("key");
+
+    if (!key || key !== VALID_KEY) {
+      return new NextResponse("Unauthorized", { status: 401 });
+    }
+
     const htmlPath = join(process.cwd(), "src", "data", "strategic-cyber-brand-guidelines.html");
     const html = readFileSync(htmlPath, "utf-8");
 
-    return NextResponse.json({ html });
+    return new NextResponse(html, {
+      headers: {
+        "Content-Type": "text/html; charset=utf-8",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Cache-Control": "no-store",
+      },
+    });
   } catch {
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
+    return new NextResponse("Server error", { status: 500 });
   }
 }
