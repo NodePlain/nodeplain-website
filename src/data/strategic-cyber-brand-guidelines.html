@@ -469,23 +469,6 @@ img, svg, video, canvas { max-width: 100%; height: auto; }
 <div class="hero-scroll"><span>&#8595; Scroll to explore</span></div>
 </section>
 
-<nav class="nav">
-<div class="nav-inner">
-<div class="nav-logo"><span class="node">Node</span><span class="plain">Plain</span></div>
-<ul class="nav-links">
-<li><a href="#purpose" class="active">Purpose</a></li>
-<li><a href="#pillar-standout">Deep Dive</a></li>
-<li><a href="#colours">Colours</a></li>
-<li><a href="#logos">Logos</a></li>
-<li><a href="#fonts">Fonts</a></li>
-<li><a href="#recommendation">Recommendation</a></li>
-<li><a href="#preview">Preview</a></li>
-<li><a href="#roadmap">Roadmap</a></li>
-</ul>
-<button class="hamburger-btn" id="hamburger-toggle">☰</button>
-</div>
-</nav>
-<div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
 <div class="page-wrap">
 
 <section class="section fade-section" id="purpose">
@@ -1107,20 +1090,7 @@ var staggerObserver = new IntersectionObserver(function(entries) {
 }, { threshold: 0.15 });
 document.querySelectorAll('.pillar-grid-3, .roadmap').forEach(function(el) { staggerObserver.observe(el); });
 
-/* ── Nav highlight ── */
-var sections = document.querySelectorAll('.section[id]');
-var navLinks = document.querySelectorAll('.nav-links a');
-window.addEventListener('scroll', function() {
-    var current = '';
-    sections.forEach(function(section) {
-        if (window.scrollY >= section.offsetTop - 120) current = section.getAttribute('id');
-    });
-    if (current === 'pillar-impression') current = 'pillar-standout';
-    navLinks.forEach(function(link) {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) link.classList.add('active');
-    });
-});
+/* Nav highlight removed — nav bar no longer present */
 
 /* ══════ PREVIEW TOOL LOGIC ══════ */
 (function() {
@@ -1247,8 +1217,8 @@ window.addEventListener('scroll', function() {
     update(false);
 })();
 
-/* ══════ HAMBURGER MENU ══════ */
-(function() {
+/* Navigation removed — hamburger menu code skipped */
+if (false) { (function() {
     var hamburger = document.getElementById('hamburger-toggle');
     var overlay = document.getElementById('mobile-nav-overlay');
     var navLinks = document.querySelector('.nav-links');
@@ -1287,7 +1257,7 @@ window.addEventListener('scroll', function() {
     });
 
     cloneNavToOverlay();
-})();
+})(); }
 
 /* Preview controls now use pure CSS position:sticky — no JS needed */
 </script>
