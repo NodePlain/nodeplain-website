@@ -21,15 +21,6 @@
 html { scroll-behavior: smooth; }
 body { font-family: var(--font-body); background: var(--np-cream); color: var(--np-ink); line-height: 1.65; font-size: 15px; overflow-x: hidden; }
 .page-wrap { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-.nav { display: none !important; }
-.nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; }
-.nav-logo { font-family: var(--font-headline-bold); font-weight: 800; font-size: 1rem; letter-spacing: -0.04em; }
-.nav-logo .node { color: var(--np-ink); }
-.nav-logo .plain { color: var(--np-amber); }
-.nav-links { display: flex; gap: 1.5rem; align-items: center; list-style: none; }
-.nav-links a { font-family: var(--font-body); font-size: 0.72rem; font-weight: 500; color: var(--np-stone); text-decoration: none; transition: color 0.2s; }
-.nav-links a:hover { color: var(--np-ink); }
-.nav-links a.active { color: var(--np-ink); font-weight: 600; }
 .section { padding: 3.5rem 0 2.5rem; position: relative; }
 .section-tag { font-family: var(--font-mono); font-size: 0.52rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--np-stone); margin-bottom: 0.6rem; }
 .section h2 { font-family: var(--font-headline); font-size: 2rem; font-weight: 500; line-height: 1.2; color: var(--np-ink); margin-bottom: 0.5rem; }
@@ -293,11 +284,6 @@ html, body { overflow-x: hidden !important; max-width: 100vw; }
 *, *::before, *::after { max-width: 100%; }
 img, svg, video, canvas { max-width: 100%; height: auto; }
 .page-wrap { padding: 0 1rem; overflow: hidden; }
-
-/* ── HIDE NAV ENTIRELY ON MOBILE ── */
-.nav { display: none !important; }
-.hamburger-btn { display: none !important; }
-.mobile-nav-overlay { display: none !important; }
 
 /* ── HERO SECTION ── */
 .hero { min-height: 60vh; }
@@ -1090,8 +1076,6 @@ var staggerObserver = new IntersectionObserver(function(entries) {
 }, { threshold: 0.15 });
 document.querySelectorAll('.pillar-grid-3, .roadmap').forEach(function(el) { staggerObserver.observe(el); });
 
-/* Nav highlight removed — nav bar no longer present */
-
 /* ══════ PREVIEW TOOL LOGIC ══════ */
 (function() {
     var logoData = JSON.parse(document.getElementById('logo-data').textContent);
@@ -1217,49 +1201,6 @@ document.querySelectorAll('.pillar-grid-3, .roadmap').forEach(function(el) { sta
     update(false);
 })();
 
-/* Navigation removed — hamburger menu code skipped */
-if (false) { (function() {
-    var hamburger = document.getElementById('hamburger-toggle');
-    var overlay = document.getElementById('mobile-nav-overlay');
-    var navLinks = document.querySelector('.nav-links');
-
-    if (!hamburger || !overlay || !navLinks) return;
-
-    function toggleMenu() {
-        overlay.classList.toggle('visible');
-        hamburger.classList.toggle('active');
-    }
-
-    function closeMenu() {
-        overlay.classList.remove('visible');
-        hamburger.classList.remove('active');
-    }
-
-    function cloneNavToOverlay() {
-        var clonedLinks = navLinks.cloneNode(true);
-        clonedLinks.className = 'nav-links';
-        overlay.innerHTML = '';
-        overlay.appendChild(clonedLinks);
-
-        var links = overlay.querySelectorAll('a');
-        links.forEach(function(link) {
-            link.addEventListener('click', closeMenu);
-        });
-    }
-
-    hamburger.addEventListener('click', toggleMenu);
-    overlay.addEventListener('click', function(e) {
-        if (e.target === overlay) closeMenu();
-    });
-
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeMenu();
-    });
-
-    cloneNavToOverlay();
-})(); }
-
-/* Preview controls now use pure CSS position:sticky — no JS needed */
 </script>
 </body>
 </html>
