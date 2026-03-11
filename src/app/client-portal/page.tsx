@@ -2,10 +2,14 @@
 
 import { useState, useRef } from "react";
 
+type ContentSource =
+  | { type: "file"; key: string }
+  | { type: "url"; url: string };
+
 export default function ClientPortalPage() {
   const [key, setKey] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "error" | "success">("idle");
-  const [validatedKey, setValidatedKey] = useState<string | null>(null);
+  const [contentSource, setContentSource] = useState<ContentSource | null>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   async function handleSubmit(e: React.FormEvent) {
@@ -22,7 +26,13 @@ export default function ClientPortalPage() {
       });
 
       if (res.ok) {
-        setValidatedKey(key.trim());
+        const data = await res.json();
+
+        if (data.type === "url") {
+          setContentSource({ type: "url", url: data.url });
+        } else {
+          setContentSource({ type: "file", key: key.trim() });
+        }
         setStatus("success");
       } else {
         setStatus("error");
@@ -32,13 +42,18 @@ export default function ClientPortalPage() {
     }
   }
 
-  // Once authenticated, load the HTML via src (not srcDoc) so iOS Safari respects viewport meta
-  if (status === "success" && validatedKey) {
+  // Once authenticated, show the content
+  if (status === "success" && contentSource) {
+    const iframeSrc =
+      contentSource.type === "url"
+        ? contentSource.url
+        : `/api/client-portal?key=${encodeURIComponent(contentSource.key)}`;
+
     return (
       <div className="fixed inset-0 z-[9999] bg-cream">
         <iframe
           ref={iframeRef}
-          src={`/api/client-portal?key=${encodeURIComponent(validatedKey)}`}
+          src={iframeSrc}
           title="Client Deliverable"
           className="w-full h-full border-0"
         />
@@ -84,7 +99,7 @@ export default function ClientPortalPage() {
                   setKey(e.target.value);
                   if (status === "error") setStatus("idle");
                 }}
-                placeholder="e.g. PCL-2024-AUTOMATION"
+                placeholder="e.g. SC-2026-BRANDBOOK"
                 autoFocus
                 autoComplete="off"
                 className="w-full px-4 py-3 rounded-[9px] border border-stone/20 bg-cream/50 text-ink text-sm placeholder:text-stone/50 focus:outline-none focus:ring-2 focus:ring-amber/40 focus:border-amber/50 transition-all"
