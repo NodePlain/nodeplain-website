@@ -40,6 +40,15 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+
+  async rewrites() {
+    return [
+      {
+        source: "/head-to-toe-example",
+        destination: "/head-to-toe-example/index.html",
+      },
+    ];
+  },
 };
 
 export default nextConfig;

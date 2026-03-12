@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Head to Toe Therapies | Paediatric Physiotherapy Canberra</title>
+<link rel="stylesheet" href="/head-to-toe-example/output.css">
+</head>
+<body class="bg-navy text-navy">
+
+<!-- ===== NAVIGATION — pill-shaped, sticky on all screens, fades when sticky CTA shows ===== -->
+<header id="siteHeader" class="fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-4">
+    <!-- Pill-shaped nav bar -->
+    <nav id="mainNav" class="bg-navy-light/80 backdrop-blur-md rounded-full px-4 sm:px-8 py-3 flex items-center justify-between shadow-lg border border-cream/10">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2">
+        <img src="/head-to-toe-example/images/logomark.png" alt="Head to Toe Therapies" class="w-9 h-9 flex-shrink-0 brightness-0 invert opacity-90">
+        <span class="font-logo text-cream text-lg sm:text-xl tracking-wide">Head to Toe Therapies</span>
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden lg:flex items-center gap-6">
+        <a href="#" class="text-cream/80 hover:text-cream text-sm font-medium transition-colors">Home</a>
+        <a href="#about" class="text-cream/80 hover:text-cream text-sm font-medium transition-colors">About Us</a>
+        <!-- Services dropdown -->
+        <div class="nav-dropdown relative">
+          <button class="text-cream/80 hover:text-cream text-sm font-medium transition-colors flex items-center gap-1">
+            Our Services
+            <svg class="w-3.5 h-3.5 dropdown-chevron transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-white rounded-xl shadow-xl p-2 min-w-[220px] z-50">
+            <a href="#" class="block px-4 py-2.5 text-sm text-navy hover:bg-blush-light rounded-lg transition-colors">Trexo Robotics</a>
+            <a href="#" class="block px-4 py-2.5 text-sm text-navy hover:bg-blush-light rounded-lg transition-colors">CME / Therasuit</a>
+            <a href="#" class="block px-4 py-2.5 text-sm text-navy hover:bg-blush-light rounded-lg transition-colors">Hydrotherapy</a>
+            <a href="#" class="block px-4 py-2.5 text-sm text-navy hover:bg-blush-light rounded-lg transition-colors">Spider Cage Therapy</a>
+            <a href="#" class="block px-4 py-2.5 text-sm text-navy hover:bg-blush-light rounded-lg transition-colors">Spinal Stimulation</a>
+            <a href="#" class="block px-4 py-2.5 text-sm text-navy hover:bg-blush-light rounded-lg transition-colors">Toe-Walking Program</a>
+            <a href="#" class="block px-4 py-2.5 text-sm text-navy hover:bg-blush-light rounded-lg transition-colors">Sports Physiotherapy</a>
+          </div>
+        </div>
+        <a href="#team" class="text-cream/80 hover:text-cream text-sm font-medium transition-colors">Our Team</a>
+        <a href="#" class="text-cream/80 hover:text-cream text-sm font-medium transition-colors">NDIS</a>
+        <a href="#contact" class="text-cream/80 hover:text-cream text-sm font-medium transition-colors">Contact</a>
+      </div>
+
+      <!-- Desktop CTA + Mobile hamburger -->
+      <div class="flex items-center gap-3">
+        <a href="#" class="hidden lg:inline-flex bg-blush text-navy font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-blush-dark transition-all hover:-translate-y-0.5">Book Now</a>
+        <button id="mobileMenuBtn" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
+          <span class="block w-6 h-0.5 bg-cream rounded"></span>
+          <span class="block w-6 h-0.5 bg-cream rounded"></span>
+          <span class="block w-6 h-0.5 bg-cream rounded"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-navy-light/90 backdrop-blur-xl rounded-2xl mt-2 p-6 shadow-xl border border-cream/10">
+      <div class="flex flex-col gap-4">
+        <a href="#" class="text-cream text-base font-medium">Home</a>
+        <a href="#about" class="text-cream/70 text-base font-medium">About Us</a>
+        <a href="#services" class="text-cream/70 text-base font-medium">Our Services</a>
+        <a href="#team" class="text-cream/70 text-base font-medium">Our Team</a>
+        <a href="#" class="text-cream/70 text-base font-medium">NDIS</a>
+        <a href="#contact" class="text-cream/70 text-base font-medium">Contact</a>
+        <a href="#" class="bg-blush text-navy font-semibold text-sm px-6 py-3 rounded-full text-center mt-2 hover:bg-blush-dark transition-all">Book Now &rarr;</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<!-- ===== SECTION 1: HERO ===== -->
+<section data-theme="dark" class="bg-navy relative overflow-hidden min-h-screen flex items-center pt-28 pb-20 md:pt-32 md:pb-24">
+  <!-- Background glow -->
+  <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-radial from-blush/10 to-transparent pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Left content -->
+      <div>
+        <!-- Eyebrow -->
+        <div class="inline-flex items-center gap-2 bg-blush/15 border border-blush/25 px-4 py-2 rounded-full mb-6 animate-fade-in-up">
+          <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400"></span></span>
+          <span class="text-cream/80 text-xs sm:text-sm font-semibold tracking-wide whitespace-nowrap">Next Available Appointment: This Week</span>
+        </div>
+
+        <h1 class="font-display font-black text-cream text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] leading-[1.08] tracking-tight mb-5 animate-fade-in-up" style="animation-delay: 0.1s">
+          Canberra's Leading<br><span class="text-blush relative">Paediatric Physio</span>
+        </h1>
+
+        <p class="text-cream/65 text-base sm:text-lg leading-relaxed mb-8 max-w-lg animate-fade-in-up" style="animation-delay: 0.2s">
+          The most <strong class="text-cream font-semibold">advanced paediatric physiotherapy</strong> clinic in Canberra. We combine <strong class="text-cream font-semibold">cutting-edge robotics</strong> with compassionate, evidence-based therapy to help children reach their <strong class="text-cream font-semibold">full potential</strong>.
+        </p>
+
+        <!-- Mobile trust strip (above the fold) -->
+        <div class="flex flex-wrap gap-2 mb-6 lg:hidden animate-fade-in-up" style="animation-delay: 0.25s">
+          <span class="inline-flex items-center gap-1.5 bg-cream/10 border border-cream/15 px-3 py-1.5 rounded-full text-cream/80 text-[11px] font-semibold">
+            <svg class="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            NDIS Registered
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-cream/10 border border-cream/15 px-3 py-1.5 rounded-full text-cream/80 text-[11px] font-semibold">
+            <svg class="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="#facc15"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            4.9 Google Rating
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-cream/10 border border-cream/15 px-3 py-1.5 rounded-full text-cream/80 text-[11px] font-semibold">
+            <svg class="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="#f4cdd4" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            AHPRA Accredited
+          </span>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-4 mb-12 animate-fade-in-up" style="animation-delay: 0.3s">
+          <a href="#" class="bg-blush text-navy font-semibold text-sm sm:text-base px-7 py-3.5 rounded-full hover:bg-blush-dark transition-all hover:-translate-y-0.5 hover:shadow-xl shadow-lg active:scale-95">
+            Book Your Appointment &rarr;
+          </a>
+          <a href="#services" class="border border-cream/30 text-cream font-semibold text-sm sm:text-base px-7 py-3.5 rounded-full hover:bg-cream/10 transition-all active:scale-95">
+            View All Services
+          </a>
+        </div>
+
+        <!-- Stats row -->
+        <div class="flex flex-wrap gap-8 sm:gap-12 pt-8 border-t border-cream/10 animate-fade-in-up" style="animation-delay: 0.4s">
+          <div>
+            <div class="font-display font-black text-3xl sm:text-4xl text-blush leading-none"><span data-count="500" data-suffix="+">0+</span></div>
+            <div class="text-cream/50 text-xs sm:text-sm mt-1 font-medium">Families Supported</div>
+          </div>
+          <div>
+            <div class="font-display font-black text-3xl sm:text-4xl text-blush leading-none"><span data-count="4.9" data-suffix="★">0★</span></div>
+            <div class="text-cream/50 text-xs sm:text-sm mt-1 font-medium">Google Rating</div>
+          </div>
+          <div>
+            <div class="font-display font-black text-3xl sm:text-4xl text-blush leading-none"><span data-count="8" data-suffix="+">0+</span></div>
+            <div class="text-cream/50 text-xs sm:text-sm mt-1 font-medium">Advanced Therapies</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right image area -->
+      <div class="relative hidden lg:block">
+        <div class="w-full aspect-[4/5] bg-gradient-to-br from-blush to-blush-dark rounded-3xl flex items-center justify-center overflow-hidden">
+          <!-- Placeholder image area -->
+          <svg class="w-48 h-48 opacity-20" viewBox="0 0 24 24" fill="rgba(27,54,93,1)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+        </div>
+
+        <!-- Floating card: NDIS -->
+        <div class="absolute -bottom-4 -left-6 bg-white rounded-xl px-5 py-4 shadow-xl flex items-center gap-3 z-20">
+          <div class="w-11 h-11 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#2d6a4f" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <div class="font-display font-bold text-sm text-navy">NDIS Registered</div>
+            <div class="text-xs text-gray-500">Approved Provider</div>
+          </div>
+        </div>
+
+        <!-- Floating card: Trexo -->
+        <div class="absolute top-12 -right-6 bg-white rounded-xl px-5 py-4 shadow-xl flex items-center gap-3 z-20">
+          <div class="w-11 h-11 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#1971c2" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div class="font-display font-bold text-sm text-navy">Trexo Robotics</div>
+            <div class="text-xs text-gray-500">Only clinic in ACT</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gradient fade to next section -->
+  <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-cream to-transparent z-20 pointer-events-none"></div>
+</section>
+
+
+<!-- ===== TRUST BAR ===== -->
+<section data-theme="light" class="py-8 bg-cream relative z-30">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+      <!-- NDIS with real logo -->
+      <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-full shadow-sm border border-navy/5 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+        <div class="w-9 h-9 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><path d="M3 6h3v12H3V6zm5 0h2.5l4 8V6H17v12h-2.5l-4-8v8H8V6zm10 0h3v12h-3V6z" fill="#6B2D8B"/></svg>
+        </div>
+        <div>
+          <div class="text-xs sm:text-sm font-bold text-navy leading-tight">NDIS Registered</div>
+          <div class="text-[10px] sm:text-xs text-gray-500">Approved Provider</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-full shadow-sm border border-navy/5 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+        <div class="w-9 h-9 bg-green-50 rounded-full flex items-center justify-center flex-shrink-0">
+          <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="#2d6a4f" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <div class="text-xs sm:text-sm font-bold text-navy leading-tight">APA Member</div>
+          <div class="text-[10px] sm:text-xs text-gray-500">Australian Physio Assoc.</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-full shadow-sm border border-navy/5 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+        <div class="w-9 h-9 bg-pink-50 rounded-full flex items-center justify-center flex-shrink-0">
+          <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="#c2185b" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div>
+          <div class="text-xs sm:text-sm font-bold text-navy leading-tight">AHPRA Registered</div>
+          <div class="text-[10px] sm:text-xs text-gray-500">Nationally Accredited</div>
+        </div>
+      </div>
+      <!-- Google Reviews with real Google "G" + 5 stars -->
+      <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-full shadow-sm border border-navy/5 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+        <div class="w-9 h-9 bg-white rounded-full flex items-center justify-center flex-shrink-0 border border-gray-100">
+          <!-- Google "G" logo -->
+          <svg class="w-5 h-5" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-1 mb-0.5">
+            <span class="text-xs sm:text-sm font-bold text-navy leading-tight">4.9</span>
+            <!-- 5 gold stars -->
+            <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 20 20"><path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.6.94-5.5-4-3.9 5.53-.93L10 1z"/></svg>
+            <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 20 20"><path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.6.94-5.5-4-3.9 5.53-.93L10 1z"/></svg>
+            <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 20 20"><path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.6.94-5.5-4-3.9 5.53-.93L10 1z"/></svg>
+            <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 20 20"><path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.6.94-5.5-4-3.9 5.53-.93L10 1z"/></svg>
+            <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 20 20"><path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.6.94-5.5-4-3.9 5.53-.93L10 1z"/></svg>
+          </div>
+          <div class="text-[10px] sm:text-xs text-gray-500">120+ Google Reviews</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== SECTION 2: SERVICES ===== -->
+<section id="services" data-theme="light" class="py-20 sm:py-24 bg-cream">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <!-- Header -->
+    <div class="text-center mb-14">
+      <div class="inline-flex items-center gap-2 mb-4">
+        <span class="w-7 h-0.5 bg-blush-dark rounded"></span>
+        <span class="text-xs font-bold uppercase tracking-widest text-blush-dark">Our Services</span>
+      </div>
+      <h2 class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-navy tracking-tight mb-4">
+        Transform Your Child's Health With<br class="hidden sm:block"> Our <strong class="text-blush-dark">Expert</strong> Physiotherapy Services
+      </h2>
+      <p class="text-gray-500 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+        Canberra's most <strong class="text-navy font-semibold">comprehensive range</strong> of paediatric physiotherapy services, combining <strong class="text-navy font-semibold">world-class technology</strong> with hands-on care.
+      </p>
+    </div>
+
+    <!-- Service cards — 3 featured at top -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+      <!-- Trexo Robotics -->
+      <div class="service-card bg-white rounded-2xl p-7 border border-navy/5 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+        <div class="w-14 h-14 bg-blush-light rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-7 h-7 stroke-navy" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-lg text-navy mb-2">Trexo Robotics</h3>
+        <p class="text-sm text-gray-500 leading-relaxed mb-5"><strong class="text-navy font-semibold">Robotic-assisted gait training</strong> for children with mobility challenges. The <strong class="text-navy font-semibold">only Trexo clinic</strong> in the ACT region.</p>
+        <a href="#" class="inline-flex items-center gap-1.5 text-sm font-semibold text-navy group-hover:text-blush-dark group-hover:gap-3 transition-all">
+          Learn More
+          <svg class="w-4 h-4 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <!-- CME & Therasuit -->
+      <div class="service-card bg-white rounded-2xl p-7 border border-navy/5 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+        <div class="w-14 h-14 bg-blush-light rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-7 h-7 stroke-navy" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-lg text-navy mb-2">CME &amp; Therasuit</h3>
+        <p class="text-sm text-gray-500 leading-relaxed mb-5"><strong class="text-navy font-semibold">Intensive therapy programs</strong> using Therasuit technology to build <strong class="text-navy font-semibold">strength, coordination</strong> and motor control.</p>
+        <a href="#" class="inline-flex items-center gap-1.5 text-sm font-semibold text-navy group-hover:text-blush-dark group-hover:gap-3 transition-all">
+          Learn More
+          <svg class="w-4 h-4 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <!-- Hydrotherapy -->
+      <div class="service-card bg-white rounded-2xl p-7 border border-navy/5 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+        <div class="w-14 h-14 bg-blush-light rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-7 h-7 stroke-navy" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l3-9 6 18 3-9h4"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-lg text-navy mb-2">Hydrotherapy</h3>
+        <p class="text-sm text-gray-500 leading-relaxed mb-5"><strong class="text-navy font-semibold">Warm water therapy</strong> sessions designed to reduce pain, improve movement and <strong class="text-navy font-semibold">build confidence</strong> in a safe environment.</p>
+        <a href="#" class="inline-flex items-center gap-1.5 text-sm font-semibold text-navy group-hover:text-blush-dark group-hover:gap-3 transition-all">
+          Learn More
+          <svg class="w-4 h-4 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA link -->
+    <div class="text-center mt-4 mb-6">
+      <p class="text-sm text-gray-500">Let's Make Something Great Together. <a href="#services" class="text-navy font-semibold underline hover:text-blush-dark">View All Services</a></p>
+    </div>
+
+    <!-- Remaining services — smaller 4-col grid matching the reference -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+      <div class="service-card bg-white rounded-xl p-5 border border-navy/5 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group text-center">
+        <div class="w-12 h-12 bg-blush-light rounded-lg flex items-center justify-center mb-3 mx-auto">
+          <svg class="w-6 h-6 stroke-navy" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-sm text-navy mb-1">Spider Cage</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Dynamic suspension therapy for active movement.</p>
+      </div>
+      <div class="service-card bg-white rounded-xl p-5 border border-navy/5 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group text-center">
+        <div class="w-12 h-12 bg-blush-light rounded-lg flex items-center justify-center mb-3 mx-auto">
+          <svg class="w-6 h-6 stroke-navy" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-sm text-navy mb-1">Spinal Stimulation</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Non-invasive neural pathway activation.</p>
+      </div>
+      <div class="service-card bg-white rounded-xl p-5 border border-navy/5 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group text-center">
+        <div class="w-12 h-12 bg-blush-light rounded-lg flex items-center justify-center mb-3 mx-auto">
+          <svg class="w-6 h-6 stroke-navy" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-sm text-navy mb-1">Toe-Walking</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Specialised assessment and treatment programs.</p>
+      </div>
+      <div class="service-card bg-white rounded-xl p-5 border border-navy/5 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group text-center">
+        <div class="w-12 h-12 bg-blush-light rounded-lg flex items-center justify-center mb-3 mx-auto">
+          <svg class="w-6 h-6 stroke-navy" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-sm text-navy mb-1">Sports Physio</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Musculoskeletal care for young athletes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== SECTION 3: WHY US (dark navy) ===== -->
+<section id="about" data-theme="dark" class="py-20 sm:py-24 bg-navy relative overflow-hidden">
+  <div class="absolute top-0 left-0 w-1/2 h-full bg-gradient-radial from-blush/5 to-transparent pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <!-- Image -->
+      <div class="relative hidden lg:block">
+        <div class="w-full aspect-square bg-gradient-to-br from-blush to-blush-dark rounded-3xl flex items-center justify-center">
+          <svg class="w-40 h-40 opacity-15" viewBox="0 0 24 24" fill="rgba(27,54,93,1)"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg>
+        </div>
+        <div class="absolute -bottom-5 -right-5 w-40 h-40 bg-blush/15 rounded-3xl -z-10"></div>
+      </div>
+
+      <!-- Content -->
+      <div>
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="w-7 h-0.5 bg-blush rounded"></span>
+          <span class="text-xs font-bold uppercase tracking-widest text-blush">Why Choose Us</span>
+        </div>
+        <h2 class="font-display font-black text-3xl sm:text-4xl lg:text-[2.75rem] text-cream tracking-tight leading-tight mb-5">
+          We Understand That Every Child's Journey Is&nbsp;<span class="text-blush">Unique</span>
+        </h2>
+        <p class="text-cream/60 text-base leading-relaxed mb-10">
+          At Head to Toe Therapies, we don't believe in one-size-fits-all. Our team combines <strong class="text-cream font-semibold">cutting-edge technology</strong> with <strong class="text-cream font-semibold">deep clinical expertise</strong> to create truly <strong class="text-cream font-semibold">personalised treatment plans</strong>.
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div class="why-feature flex gap-3.5 items-start">
+            <div class="why-feature-icon w-10 h-10 bg-blush/10 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors">
+              <svg class="w-5 h-5 stroke-blush" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            </div>
+            <div>
+              <h4 class="font-display font-bold text-sm text-cream mb-1">Advanced Technology</h4>
+              <p class="text-xs text-cream/40 leading-relaxed">Trexo Robotics, Therasuit &amp; more</p>
+            </div>
+          </div>
+          <div class="why-feature flex gap-3.5 items-start">
+            <div class="why-feature-icon w-10 h-10 bg-blush/10 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors">
+              <svg class="w-5 h-5 stroke-blush" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </div>
+            <div>
+              <h4 class="font-display font-bold text-sm text-cream mb-1">Compassionate Care</h4>
+              <p class="text-xs text-cream/40 leading-relaxed">Family-centred, child-led approach</p>
+            </div>
+          </div>
+          <div class="why-feature flex gap-3.5 items-start">
+            <div class="why-feature-icon w-10 h-10 bg-blush/10 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors">
+              <svg class="w-5 h-5 stroke-blush" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <h4 class="font-display font-bold text-sm text-cream mb-1">NDIS Expertise</h4>
+              <p class="text-xs text-cream/40 leading-relaxed">Full plan management &amp; reporting</p>
+            </div>
+          </div>
+          <div class="why-feature flex gap-3.5 items-start">
+            <div class="why-feature-icon w-10 h-10 bg-blush/10 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors">
+              <svg class="w-5 h-5 stroke-blush" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <div>
+              <h4 class="font-display font-bold text-sm text-cream mb-1">Expert Team</h4>
+              <p class="text-xs text-cream/40 leading-relaxed">Specialist paediatric physiotherapists</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== SECTION 4: TESTIMONIALS ===== -->
+<section id="testimonials" data-theme="light" class="py-20 sm:py-24 bg-cream">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <!-- Header -->
+    <div class="text-center mb-14">
+      <div class="inline-flex items-center gap-2 mb-4">
+        <span class="w-7 h-0.5 bg-blush-dark rounded"></span>
+        <span class="text-xs font-bold uppercase tracking-widest text-blush-dark">Testimonials</span>
+      </div>
+      <h2 class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-navy tracking-tight">
+        What Our Families Say
+      </h2>
+    </div>
+
+    <!-- Carousel -->
+    <div class="relative overflow-hidden">
+      <div id="carouselTrack" class="carousel-track flex">
+        <!-- Slide 1 -->
+        <div class="min-w-full px-2 sm:px-4">
+          <div class="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 shadow-md border border-navy/5 grid lg:grid-cols-2 gap-8 items-center">
+            <div class="relative">
+              <div class="flex gap-1 mb-5">
+                <svg class="w-5 h-5 fill-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 fill-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 fill-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 fill-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 fill-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <blockquote class="relative text-base sm:text-lg font-medium text-navy leading-relaxed mb-6 pl-6">
+                <span class="absolute -top-3 left-0 font-display text-5xl font-black text-blush leading-none">&ldquo;</span>
+                The team at Head to Toe has completely changed our son's life. After six months on the Trexo, he's taking independent steps for the first time. We can't recommend them enough.
+              </blockquote>
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-blush-light flex items-center justify-center font-display font-bold text-navy">SJ</div>
+                <div>
+                  <div class="font-display font-bold text-sm text-navy">Sarah J.</div>
+                  <div class="text-xs text-gray-500">Parent &bull; NDIS Participant</div>
+                </div>
+              </div>
+            </div>
+            <div class="hidden lg:flex h-72 bg-gradient-to-br from-blush-light to-blush rounded-2xl items-center justify-center">
+              <svg class="w-24 h-24 opacity-15" viewBox="0 0 24 24" fill="rgba(27,54,93,1)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="min-w-full px-2 sm:px-4">
+          <div class="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 shadow-md border border-navy/5 grid lg:grid-cols-2 gap-8 items-center">
+            <div class="relative">
+              <div class="flex gap-1 mb-5">
+                <svg class="w-5 h-5 fill-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 fill-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 fill-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 fill-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 fill-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <blockquote class="relative text-base sm:text-lg font-medium text-navy leading-relaxed mb-6 pl-6">
+                <span class="absolute -top-3 left-0 font-display text-5xl font-black text-blush leading-none">&ldquo;</span>
+                Harjodh and Jared are incredible. They took the time to really understand our daughter's needs and created a plan that actually works. The hydrotherapy sessions are her favourite part of the week.
+              </blockquote>
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-blush-light flex items-center justify-center font-display font-bold text-navy">ML</div>
+                <div>
+                  <div class="font-display font-bold text-sm text-navy">Michelle L.</div>
+                  <div class="text-xs text-gray-500">Parent &bull; Tuggeranong</div>
+                </div>
+              </div>
+            </div>
+            <div class="hidden lg:flex h-72 bg-gradient-to-br from-blush-light to-blush rounded-2xl items-center justify-center">
+              <svg class="w-24 h-24 opacity-15" viewBox="0 0 24 24" fill="rgba(27,54,93,1)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="min-w-full px-2 sm:px-4">
+          <div class="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 shadow-md border border-navy/5 grid lg:grid-cols-2 gap-8 items-center">
+            <div class="relative">
+              <div class="flex gap-1 mb-5">
+                <svg class="w-5 h-5 fill-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 fill-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 fill-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 fill-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 fill-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <blockquote class="relative text-base sm:text-lg font-medium text-navy leading-relaxed mb-6 pl-6">
+                <span class="absolute -top-3 left-0 font-display text-5xl font-black text-blush leading-none">&ldquo;</span>
+                We drove from Sydney specifically for the Therasuit intensive program. Worth every kilometre. Our son achieved more in three weeks than he had in a year of traditional physio.
+              </blockquote>
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-blush-light flex items-center justify-center font-display font-bold text-navy">DR</div>
+                <div>
+                  <div class="font-display font-bold text-sm text-navy">David R.</div>
+                  <div class="text-xs text-gray-500">Parent &bull; Sydney</div>
+                </div>
+              </div>
+            </div>
+            <div class="hidden lg:flex h-72 bg-gradient-to-br from-blush-light to-blush rounded-2xl items-center justify-center">
+              <svg class="w-24 h-24 opacity-15" viewBox="0 0 24 24" fill="rgba(27,54,93,1)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="flex items-center justify-center gap-5 mt-8">
+        <button id="prevBtn" class="w-12 h-12 rounded-full border-2 border-navy flex items-center justify-center hover:bg-navy group transition-colors" aria-label="Previous">
+          <svg class="w-5 h-5 stroke-navy group-hover:stroke-cream transition-colors" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
+        <div class="flex gap-2" id="carouselDots">
+          <button class="carousel-dot active w-7 h-2.5 rounded-full bg-navy transition-all" data-slide="0"></button>
+          <button class="carousel-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-all" data-slide="1"></button>
+          <button class="carousel-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-all" data-slide="2"></button>
+        </div>
+        <button id="nextBtn" class="w-12 h-12 rounded-full border-2 border-navy flex items-center justify-center hover:bg-navy group transition-colors" aria-label="Next">
+          <svg class="w-5 h-5 stroke-navy group-hover:stroke-cream transition-colors" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== SECTION 5: FAQ ===== -->
+<section id="faq" data-theme="light" class="py-20 sm:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20 items-start">
+      <!-- Left -->
+      <div>
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="w-7 h-0.5 bg-blush-dark rounded"></span>
+          <span class="text-xs font-bold uppercase tracking-widest text-blush-dark">FAQ</span>
+        </div>
+        <h2 class="font-display font-black text-3xl sm:text-4xl text-navy tracking-tight mb-4">Everything You Need to Know</h2>
+        <p class="text-gray-500 text-base leading-relaxed mb-8">Got questions about our services, NDIS funding or how to get started? We've answered the most common ones below.</p>
+        <div class="bg-blush-light rounded-2xl p-6">
+          <p class="text-sm font-medium text-navy mb-4">Can't find what you're looking for? Our friendly team is always happy to chat.</p>
+          <a href="#" class="inline-flex bg-navy text-cream font-semibold text-sm px-6 py-3 rounded-full hover:bg-navy-light transition-all hover:-translate-y-0.5">Contact Us &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div>
+        <div class="faq-item open border-t border-navy/10">
+          <button class="faq-question w-full py-5 flex items-center justify-between gap-4 text-left font-display text-base font-bold text-navy hover:text-blush-dark transition-colors">
+            Do you accept NDIS funding?
+            <span class="faq-icon w-8 h-8 rounded-full bg-blush-light flex items-center justify-center flex-shrink-0 transition-all">
+              <svg class="w-4 h-4 stroke-navy transition-colors" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p class="text-sm text-gray-500 leading-relaxed pb-5 pr-12">Yes! Head to Toe Therapies is a <strong class="text-navy font-semibold">fully registered NDIS provider</strong>. We accept <strong class="text-navy font-semibold">all plan management types</strong> including self-managed, plan-managed and NDIA-managed funding. We can also help with reports and reviews.</p>
+          </div>
+        </div>
+        <div class="faq-item border-t border-navy/10">
+          <button class="faq-question w-full py-5 flex items-center justify-between gap-4 text-left font-display text-base font-bold text-navy hover:text-blush-dark transition-colors">
+            What ages do you treat?
+            <span class="faq-icon w-8 h-8 rounded-full bg-blush-light flex items-center justify-center flex-shrink-0 transition-all">
+              <svg class="w-4 h-4 stroke-navy transition-colors" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p class="text-sm text-gray-500 leading-relaxed pb-5 pr-12">We specialise in paediatric physiotherapy for children from <strong class="text-navy font-semibold">infants through to young adults (0-21 years)</strong>. Our team has extensive experience working with children at every developmental stage.</p>
+          </div>
+        </div>
+        <div class="faq-item border-t border-navy/10">
+          <button class="faq-question w-full py-5 flex items-center justify-between gap-4 text-left font-display text-base font-bold text-navy hover:text-blush-dark transition-colors">
+            What is Trexo Robotics therapy?
+            <span class="faq-icon w-8 h-8 rounded-full bg-blush-light flex items-center justify-center flex-shrink-0 transition-all">
+              <svg class="w-4 h-4 stroke-navy transition-colors" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p class="text-sm text-gray-500 leading-relaxed pb-5 pr-12">Trexo is a <strong class="text-navy font-semibold">robotic exoskeleton</strong> designed for children that enables assisted walking therapy. It helps children with conditions like cerebral palsy practise walking patterns with precise, guided support. We are the <strong class="text-navy font-semibold">only clinic in the ACT</strong> offering this technology.</p>
+          </div>
+        </div>
+        <div class="faq-item border-t border-navy/10">
+          <button class="faq-question w-full py-5 flex items-center justify-between gap-4 text-left font-display text-base font-bold text-navy hover:text-blush-dark transition-colors">
+            Do I need a referral to book?
+            <span class="faq-icon w-8 h-8 rounded-full bg-blush-light flex items-center justify-center flex-shrink-0 transition-all">
+              <svg class="w-4 h-4 stroke-navy transition-colors" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p class="text-sm text-gray-500 leading-relaxed pb-5 pr-12"><strong class="text-navy font-semibold">No referral is needed</strong> to see a physiotherapist in Australia. However, if you are accessing services through NDIS, Medicare or private health extras, a referral from your GP or paediatrician may help maximise your funding.</p>
+          </div>
+        </div>
+        <div class="faq-item border-t border-navy/10">
+          <button class="faq-question w-full py-5 flex items-center justify-between gap-4 text-left font-display text-base font-bold text-navy hover:text-blush-dark transition-colors">
+            Where is the clinic located?
+            <span class="faq-icon w-8 h-8 rounded-full bg-blush-light flex items-center justify-center flex-shrink-0 transition-all">
+              <svg class="w-4 h-4 stroke-navy transition-colors" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p class="text-sm text-gray-500 leading-relaxed pb-5 pr-12">Our clinic is located in Tuggeranong, Canberra. We have ample parking and are easily accessible by public transport. Contact us for detailed directions.</p>
+          </div>
+        </div>
+        <div class="faq-item border-t border-b border-navy/10">
+          <button class="faq-question w-full py-5 flex items-center justify-between gap-4 text-left font-display text-base font-bold text-navy hover:text-blush-dark transition-colors">
+            How long are the therapy sessions?
+            <span class="faq-icon w-8 h-8 rounded-full bg-blush-light flex items-center justify-center flex-shrink-0 transition-all">
+              <svg class="w-4 h-4 stroke-navy transition-colors" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p class="text-sm text-gray-500 leading-relaxed pb-5 pr-12">Standard sessions are 45-60 minutes. Intensive programs like Therasuit or CME blocks typically run 2-3 hours per day over a multi-week period. We'll recommend the best format during your initial assessment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+<footer data-theme="dark" class="bg-navy pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <!-- Brand -->
+      <div>
+        <a href="#" class="flex items-center gap-2 mb-4">
+          <img src="/head-to-toe-example/images/logomark.png" alt="Head to Toe Therapies" class="w-9 h-9 flex-shrink-0 brightness-0 invert opacity-90">
+          <span class="font-logo text-cream text-lg">Head to Toe Therapies</span>
+        </a>
+        <p class="text-cream/45 text-sm leading-relaxed max-w-[260px]">Canberra's most advanced paediatric physiotherapy clinic. Helping children move, grow and thrive.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-display text-xs font-bold text-cream uppercase tracking-widest mb-5">Quick Links</h4>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-cream/45 text-sm hover:text-blush transition-colors">About Us</a></li>
+          <li><a href="#" class="text-cream/45 text-sm hover:text-blush transition-colors">Our Services</a></li>
+          <li><a href="#" class="text-cream/45 text-sm hover:text-blush transition-colors">Our Team</a></li>
+          <li><a href="#" class="text-cream/45 text-sm hover:text-blush transition-colors">NDIS Information</a></li>
+          <li><a href="#" class="text-cream/45 text-sm hover:text-blush transition-colors">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h4 class="font-display text-xs font-bold text-cream uppercase tracking-widest mb-5">Services</h4>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-cream/45 text-sm hover:text-blush transition-colors">Trexo Robotics</a></li>
+          <li><a href="#" class="text-cream/45 text-sm hover:text-blush transition-colors">CME &amp; Therasuit</a></li>
+          <li><a href="#" class="text-cream/45 text-sm hover:text-blush transition-colors">Hydrotherapy</a></li>
+          <li><a href="#" class="text-cream/45 text-sm hover:text-blush transition-colors">Spider Cage</a></li>
+          <li><a href="#" class="text-cream/45 text-sm hover:text-blush transition-colors">Sports Physio</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-display text-xs font-bold text-cream uppercase tracking-widest mb-5">Contact Us</h4>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-2.5">
+            <svg class="w-4 h-4 stroke-blush flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span class="text-cream/45 text-sm">Tuggeranong, Canberra ACT</span>
+          </li>
+          <li class="flex items-center gap-2.5">
+            <svg class="w-4 h-4 stroke-blush flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.81.36 1.6.7 2.33a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.74.34 1.53.57 2.33.7A2 2 0 0122 16.92z"/></svg>
+            <span class="text-cream/45 text-sm">(02) XXXX XXXX</span>
+          </li>
+          <li class="flex items-center gap-2.5">
+            <svg class="w-4 h-4 stroke-blush flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span class="text-cream/45 text-sm">info@headtotoetherapies.com.au</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-cream/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-cream/30 text-xs">&copy; 2025 Head to Toe Therapies. All rights reserved.</p>
+      <div class="flex gap-3">
+        <a href="#" class="w-9 h-9 rounded-full bg-cream/8 flex items-center justify-center hover:bg-blush transition-colors group" aria-label="Facebook">
+          <svg class="w-4 h-4 fill-cream group-hover:fill-navy transition-colors" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" class="w-9 h-9 rounded-full bg-cream/8 flex items-center justify-center hover:bg-blush transition-colors group" aria-label="Instagram">
+          <svg class="w-4 h-4 fill-cream group-hover:fill-navy transition-colors" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+        </a>
+        <a href="#" class="w-9 h-9 rounded-full bg-cream/8 flex items-center justify-center hover:bg-blush transition-colors group" aria-label="LinkedIn">
+          <svg class="w-4 h-4 fill-cream group-hover:fill-navy transition-colors" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ===== MOBILE STICKY CTA ===== -->
+<div id="mobileCta" class="mobile-sticky-cta fixed bottom-0 left-0 right-0 z-50 lg:hidden px-4 py-3 safe-area-pb">
+  <a id="mobileCtaBtn" href="#" class="flex items-center justify-center gap-2 bg-navy text-cream font-semibold text-base w-full py-3.5 rounded-full transition-all duration-300 shadow-lg">
+    Book Now &rarr;
+  </a>
+</div>
+
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+// Mobile menu toggle
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+let menuOpen = false;
+mobileMenuBtn.addEventListener('click', () => {
+  menuOpen = !menuOpen;
+  mobileMenu.classList.toggle('hidden');
+  // Animate hamburger to X
+  const spans = mobileMenuBtn.querySelectorAll('span');
+  if (menuOpen) {
+    spans[0].style.transform = 'rotate(45deg) translate(4px, 4px)';
+    spans[1].style.opacity = '0';
+    spans[2].style.transform = 'rotate(-45deg) translate(4px, -4px)';
+  } else {
+    spans[0].style.transform = '';
+    spans[1].style.opacity = '1';
+    spans[2].style.transform = '';
+  }
+});
+// Add transitions to hamburger spans
+mobileMenuBtn.querySelectorAll('span').forEach(s => {
+  s.style.transition = 'transform 0.25s ease, opacity 0.2s ease';
+});
+
+// Close mobile menu on link click
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    menuOpen = false;
+    const spans = mobileMenuBtn.querySelectorAll('span');
+    spans[0].style.transform = '';
+    spans[1].style.opacity = '1';
+    spans[2].style.transform = '';
+  });
+});
+
+// Testimonial carousel
+const track = document.getElementById('carouselTrack');
+const dots = document.querySelectorAll('.carousel-dot');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+let current = 0;
+const total = 3;
+
+function goToSlide(n) {
+  current = ((n % total) + total) % total;
+  track.style.transform = `translateX(-${current * 100}%)`;
+  dots.forEach((d, i) => {
+    if (i === current) {
+      d.classList.add('active');
+      d.style.width = '28px';
+      d.style.borderRadius = '6px';
+      d.style.backgroundColor = '#1b365d';
+    } else {
+      d.classList.remove('active');
+      d.style.width = '10px';
+      d.style.borderRadius = '9999px';
+      d.style.backgroundColor = '#d1d5db';
+    }
+  });
+}
+
+prevBtn.addEventListener('click', () => goToSlide(current - 1));
+nextBtn.addEventListener('click', () => goToSlide(current + 1));
+dots.forEach(d => d.addEventListener('click', () => goToSlide(+d.dataset.slide)));
+
+let autoplay = setInterval(() => goToSlide(current + 1), 6000);
+[prevBtn, nextBtn, ...dots].forEach(el => {
+  el.addEventListener('click', () => {
+    clearInterval(autoplay);
+    autoplay = setInterval(() => goToSlide(current + 1), 6000);
+  });
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// Mobile sticky CTA — show after scrolling past hero
+// Also fade nav bar when sticky CTA is visible
+const mobileCta = document.getElementById('mobileCta');
+const siteHeader = document.getElementById('siteHeader');
+const heroSection = document.querySelector('section');
+const ctaObserver = new IntersectionObserver(([entry]) => {
+  const pastHero = !entry.isIntersecting;
+  mobileCta.classList.toggle('visible', pastHero);
+  // On mobile (lg:hidden CTA), fade nav when CTA shows
+  if (window.innerWidth < 1024) {
+    siteHeader.style.opacity = pastHero ? '0' : '1';
+    siteHeader.style.pointerEvents = pastHero ? 'none' : 'auto';
+  }
+}, { threshold: 0.1 });
+ctaObserver.observe(heroSection);
+
+// On desktop, keep nav always visible (no sticky CTA on desktop)
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 1024) {
+    siteHeader.style.opacity = '1';
+    siteHeader.style.pointerEvents = 'auto';
+  }
+});
+
+// Section-aware CTA button color
+const mobileCtaBtn = document.getElementById('mobileCtaBtn');
+const themedSections = document.querySelectorAll('[data-theme]');
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const theme = entry.target.dataset.theme;
+      if (theme === 'dark') {
+        mobileCtaBtn.style.backgroundColor = '#f4cdd4';
+        mobileCtaBtn.style.color = '#1b365d';
+      } else {
+        mobileCtaBtn.style.backgroundColor = '#1b365d';
+        mobileCtaBtn.style.color = '#fef9f2';
+      }
+    }
+  });
+}, { threshold: 0, rootMargin: '0px 0px -50% 0px' })
+themedSections.forEach(s => sectionObserver.observe(s));
+
+
+// Number counter animation for stats
+const statNumbers = document.querySelectorAll('[data-count]');
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseFloat(el.dataset.count);
+      const suffix = el.dataset.suffix || '';
+      const isDecimal = target % 1 !== 0;
+      let start = 0;
+      const duration = 1500;
+      const startTime = performance.now();
+      function animate(now) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = start + (target - start) * eased;
+        el.textContent = isDecimal ? current.toFixed(1) + suffix : Math.floor(current) + suffix;
+        if (progress < 1) requestAnimationFrame(animate);
+      }
+      requestAnimationFrame(animate);
+      countObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+statNumbers.forEach(el => countObserver.observe(el));
+</script>
+
+</body>
+</html>
